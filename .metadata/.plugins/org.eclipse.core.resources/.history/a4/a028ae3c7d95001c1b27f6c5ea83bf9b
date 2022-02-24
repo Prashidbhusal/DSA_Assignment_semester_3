@@ -1,0 +1,39 @@
+package Week8to11;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class Dashboard {
+    public static void main(String[] args) {
+
+//        Initializing components in swing
+        JButton loginBtn, registerBtn;
+        JLabel titleLabel;
+        JFrame f = new JFrame("DASHBOARD");
+        loginBtn = new JButton("LOGIN");
+        registerBtn = new JButton("REGISTER");
+        titleLabel = new JLabel("DASHBOARD");
+        titleLabel.setFont(new Font("Serif", Font.PLAIN, 45));
+
+//        Adding components to frame
+        f.add(titleLabel).setBounds(150, 30, 3000, 100);
+        f.add(loginBtn).setBounds(50, 150, 500, 50);
+        f.add(registerBtn).setBounds(50, 250, 500, 50);
+
+        loginBtn.addActionListener(e -> {
+            f.dispose();
+            new LoginFrame();
+        });
+
+        registerBtn.addActionListener(e -> {
+            new RegisterFrame();
+            f.dispose();
+        });
+
+        f.setLayout(centre);
+        f.setVisible(true);
+        f.setResizable(false);
+        f.setBounds(800, 200, 600, 400);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }
+}
